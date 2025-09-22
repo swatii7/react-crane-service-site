@@ -7,7 +7,7 @@ body{
   font-family: "Inter", sans-serif;
 }
 h1, h2, h3,h4, h5, h6{
-  font-family: "Open Sans", sans-serif;
+  font-family: "Bricolage Grotesque", sans-serif;
 }
 .navbar {
   background-color: rgba(0,0,0,0.7);
@@ -131,6 +131,9 @@ h1, h2, h3,h4, h5, h6{
   color: #114d87;
   border-radius: 5px;
 }
+.sectionHeading {
+  line-height: 40px;
+}
 
 /* our services css */
 .our_services{
@@ -160,8 +163,19 @@ h1, h2, h3,h4, h5, h6{
   margin-top: 20px;
   line-height: 30px;
 }
+.serviceCard ul{
+  line-height: 30px;
+}
 .serviceCard ul li{
   font-size: 14px;
   font-weight: 500;
   color: #595960;
+  font-family: "Inter", sans-serif;
 }
+
+/* About us */
+/* .aboutUs .aboutImgWrap{
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+} */

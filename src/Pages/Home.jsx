@@ -103,8 +103,8 @@ function Home(){
         <section className="our_services">
             <Container>
                 <Row>
-                    <Col xs="12">
-                    <h2>Our Services</h2>
+                    <Col xs="12" className="text-center mb-4">
+                    <h2 className="sectionHeading fw-bold fs-2">Our Services</h2>
                     <p></p>
                     </Col>
                     {serviceArr.map((card, index)=>
@@ -113,6 +113,20 @@ function Home(){
                     </Col>
                     )}
                     
+                </Row>
+            </Container>
+        </section>
+        <section className="aboutUs">
+            <Container>
+                <Row>
+                    <Col xs="12" lg="6" className="text-center text-lg-start mb-4 order-2">
+                        <h2 className="sectionHeading fw-bold fs-2">About Us</h2>
+                        <p><strong>Ashok Crane Service</strong> has been a trusted name in the lifting and crane rental industry for over <strong>10 years</strong>. With a strong commitment to safety, reliability, and efficiency, we provide top-notch crane solutions for both commercial and residential projects.</p>
+                        <p>What sets us apart is our <strong>experienced team</strong>, modern fleet of cranes, and dedication to delivering timely, cost-effective services tailored to your needs. At Ashok Crane Service, we don’t just lift heavy loads — we lift your projects to success.</p>
+                    </Col>
+                    <Col xs="12" lg="6" className="mb-4 order-1 aboutImgWrap">
+                       <img src="" alt="about image" />
+                    </Col>
                 </Row>
             </Container>
         </section>
