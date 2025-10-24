@@ -4,24 +4,62 @@
   box-sizing: border-box;
 }
 body{
-  font-family: "Inter", sans-serif;
+  font-family: "Inter", sans-serif !important;
 }
 h1, h2, h3,h4, h5, h6{
   font-family: "Bricolage Grotesque", sans-serif;
 }
-.navbar {
-  background-color: rgba(0,0,0,0.7);
-  z-index: 99;
-  position: sticky;
+
+/* Sticky Navbar */
+.sticky-navbar {
+  z-index: 999;
+  position: sticky !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.3);
 }
-.navbar .nav-link{
+
+.nav-link-custom {
   line-height: 30px;
+  transition: all 0.3s ease;
+  position: relative;
 }
+
+.nav-link-custom:hover {
+  color: #f7a024 !important;
+  transform: translateY(-2px);
+}
+
+.nav-link-custom::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: #f7a024;
+  transition: all 0.3s ease;
+}
+
+.nav-link-custom:hover::after {
+  width: 100%;
+  left: 0;
+}
+
 .navbar .navbar-toggler{
   border-color: transparent;
 }
+
 .navbar .navbar-toggler .navbar-toggler-icon{
   filter: brightness(20);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
 }
 .heroContainer{
   background-image: url('./assets/Images/heroBannerImg.png');
@@ -49,7 +87,7 @@ h1, h2, h3,h4, h5, h6{
   position: relative;
   display: inline-block;
   padding: 20px 30px;
-  color: rgb(247 160 36);
+  color: rgb(233 151 44);
   text-transform: uppercase;
   overflow: hidden;
   letter-spacing: 4px;
@@ -64,7 +102,7 @@ h1, h2, h3,h4, h5, h6{
   left: -100%;
   width: 100%;
   height: 2px;
-  background: linear-gradient(90deg, transparent, rgb(247 160 36));
+  background: linear-gradient(90deg, transparent, rgb(233 151 44));
   animation: btn-anim1 1s linear infinite;
 }
 @keyframes btn-anim1 {
@@ -80,7 +118,7 @@ h1, h2, h3,h4, h5, h6{
   right: 0;
   width: 2px;
   height: 100%;
-  background: linear-gradient(180deg, transparent, rgb(247 160 36));
+  background: linear-gradient(180deg, transparent, rgb(233 151 44));
   animation: btn-anim2 1s linear infinite;
   animation-delay: 0.25s;
 }
@@ -97,7 +135,7 @@ h1, h2, h3,h4, h5, h6{
   right: -100%;
   width: 100%;
   height: 2px;
-  background: linear-gradient(270deg, transparent, rgb(247 160 36));
+  background: linear-gradient(270deg, transparent, rgb(233 151 44));
   animation: btn-anim3 1s linear infinite;
   animation-delay: 0.5s;
 }
@@ -114,7 +152,7 @@ h1, h2, h3,h4, h5, h6{
   left: 0;
   width: 2px;
   height: 100%;
-  background: linear-gradient(360deg, transparent, rgb(247 160 36));
+  background: linear-gradient(360deg, transparent, rgb(233 151 44));
   animation: btn-anim4 1s linear infinite;
   animation-delay: 0.75s;
 }
@@ -127,7 +165,7 @@ h1, h2, h3,h4, h5, h6{
   }
 }
 .button-animation:hover {
-  background-color: rgb(247 160 36);
+  background-color: rgb(233 151 44);
   color: #114d87;
   border-radius: 5px;
 }
@@ -140,7 +178,7 @@ h1, h2, h3,h4, h5, h6{
   padding: 100px 0;
 }
 .serviceCard{
-  background-image: linear-gradient(#fff, #fff), linear-gradient(to right, rgb(247, 160, 36), #114d87);
+  background-image: linear-gradient(#fff, #fff), linear-gradient(167deg,rgba(233, 151, 44, 1) 0%, rgba(62, 77, 80, 1) 60%, rgba(9, 54, 91, 0.81) 100%);
   border: 5px solid transparent;
   padding: 15px;
   background-origin: border-box;
@@ -149,13 +187,14 @@ h1, h2, h3,h4, h5, h6{
 }
 .card_imageWrap {
   width: auto;
-  height: 300px;
+  height: 350px;
 }
 .card_imageWrap img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 12px;
+  object-position: top;
 }
 .serviceCard h3 {
   font-size: 24px;
@@ -174,8 +213,265 @@ h1, h2, h3,h4, h5, h6{
 }
 
 /* About us */
-/* .aboutUs .aboutImgWrap{
+.aboutUs .aboutImgWrap{
   max-width: 500px;
   width: 100%;
   height: auto;
-} */
+}
+#about .sectionHeading{
+  background: linear-gradient(167deg,rgba(233, 151, 44, 1) 0%, rgba(62, 77, 80, 1) 60%, rgba(9, 54, 91, 0.81) 100%);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text !important;
+}
+
+.aboutImagePlaceholder {
+  border-radius: 12px;
+  height: 420px;
+  border: 2px dashed #dee2e6;
+}
+
+.aboutStats h3 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Why Choose Us */
+.whyChooseUs {
+  background-color: #f8f9fa;
+}
+
+.whyChooseCard {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.whyChooseCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.whyChooseIcon {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(167deg,rgba(233, 151, 44, 1) 0%, rgba(62, 77, 80, 1) 60%, rgba(9, 54, 91, 0.81) 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.whyChooseIcon span {
+  filter: grayscale(1) brightness(0) invert(1);
+}
+
+/* Gallery */
+.galleryCard {
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.galleryCard:hover {
+  transform: translateY(-5px);
+}
+
+.galleryImageWrap {
+  height: 250px;
+  overflow: hidden;
+}
+
+.galleryImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.galleryCard:hover .galleryImage {
+  transform: scale(1.05);
+}
+
+/* Testimonials */
+.testimonialCard {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #f7a024;
+  transition: transform 0.3s ease;
+}
+
+.testimonialCard:hover {
+  transform: translateY(-3px);
+}
+
+.testimonialText p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.testimonialAuthor h6 {
+  color: #114d87;
+  font-size: 1.1rem;
+}
+
+/* Contact Section */
+.contact {
+  background: linear-gradient(135deg, #114d87, #f7a024);
+  color: white;
+}
+
+.contact .sectionHeading {
+  color: white;
+}
+
+.contact .text-muted {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.contactInfo h4 {
+  color: white;
+  margin-bottom: 2rem;
+}
+
+.contactInfo h6 {
+  color: #f7a024;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.contactInfo p {
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 0;
+}
+
+.contactItem {
+  margin-bottom: 1.5rem;
+}
+
+/* Form Styling */
+.contact .form-control {
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border-radius: 8px;
+}
+
+.contact .form-control:focus {
+  border-color: #f7a024;
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  box-shadow: 0 0 0 0.2rem rgba(247, 160, 36, 0.25);
+}
+
+.contact .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.contact .form-label {
+  color: white;
+  font-weight: 600;
+}
+
+.contact .btn-primary {
+  background: #f7a024;
+  border: 2px solid #f7a024;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.contact .btn-primary:hover {
+  background: transparent;
+  color: #f7a024;
+  border-color: #f7a024;
+  transform: translateY(-2px);
+}
+
+/* Footer */
+.footer {
+  background: #1a1a1a !important;
+}
+
+.footer p {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  body {
+    padding-top: 70px;
+  }
+  
+  .heroContainer h1 {
+    font-size: 3rem !important;
+  }
+  
+  .sectionHeading {
+    font-size: 1.8rem !important;
+  }
+  
+  .whyChooseCard {
+    margin-bottom: 2rem;
+  }
+  
+  .testimonialCard {
+    margin-bottom: 2rem;
+  }
+  
+  .aboutStats h3 {
+    font-size: 2rem;
+  }
+  
+  .sticky-navbar {
+    padding: 0.5rem 1rem;
+  }
+  
+  .navbar-brand img {
+    width: 100px;
+    height: auto;
+  }
+}
+
+/* Additional animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.whyChooseCard,
+.testimonialCard,
+.serviceCard,
+.galleryCard {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Button hover effects */
+.box__link {
+  text-decoration: none;
+  color: rgb(233 151 44);
+}
+
+.box__link:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+.mainHeading{
+  font-size: 72px;
+}
